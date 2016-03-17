@@ -8,6 +8,8 @@ require_once 'introtodonateform.civix.php';
  */
 function introtodonateform_civicrm_buildForm($formName, &$form) {
   if ($formName == 'CRM_Contribute_Form_Contribution_Main') {
+    print_r($form);
+    die();
     if ($form->getAction() == CRM_Core_Action::ADD) {
       if (!empty($_GET["firstname"])) {
         $defaults['first_name'] = htmlspecialchars($_GET["firstname"]);

@@ -16,7 +16,7 @@ Form HTML on: http://newsite.crossroadscommunityfoodnetwork.org/get-involved/
   <fieldset>
     <label><input type="radio" name="amount" value="60">60</label>
     <label><input type="radio" name="amount" value="100">100</label>
-    <label><input type="radio" name="amount" value="100">140</label>
+    <label><input type="radio" name="amount" value="140">140</label>
   </fieldset>
   <input type="submit" value="Donate Now">
 </form>
