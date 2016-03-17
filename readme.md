@@ -14,9 +14,10 @@ Form HTML on: http://newsite.crossroadscommunityfoodnetwork.org/get-involved/
   <input type="text" name="lastname" placeholder="Last Name">
   <input type="email" name="email" placeholder="Email">
   <fieldset>
+    <label><input type="radio" name="amount" value="20">20</label>
     <label><input type="radio" name="amount" value="60">60</label>
     <label><input type="radio" name="amount" value="100">100</label>
-    <label><input type="radio" name="amount" value="140">140</label>
+    <label><input type="radio" name="amount" value="750">750</label>
   </fieldset>
   <input type="submit" value="Donate Now">
 </form>
@@ -25,6 +26,6 @@ Form HTML on: http://newsite.crossroadscommunityfoodnetwork.org/get-involved/
 Things to do:
 
 + style form
-+ empty amount
++ amount functionality
 
 http://newsite.crossroadscommunityfoodnetwork.org/civicrm/?page=CiviCRM&q=civicrm/contribute/transact&reset=1&id=2
