@@ -3,6 +3,25 @@
 require_once 'introtodonateform.civix.php';
 
 /**
+ * Implements hook_civicrm_buildform
+ * @param  [type] $formName [description]
+ * @param  [type] $form     [description]
+ */
+function introtodonateform_civicrm_buildForm($formName, &$form) {
+  if ($formName == 'CRM_Contribute_Form_Contribution_Main') {
+    if ($form->getAction() == CRM_Core_Action::ADD) {
+      if (!empty($_GET["firstname"])) {
+        $defaults['first_name'] = $_GET["firstname"];
+        $form->setDefaults($defaults);
+      }
+    }
+    // ($_GET["lastname"])
+    // ($_GET["email"])
+    // ($_GET["amount"])
+  }
+}
+
+/**
  * Implements hook_civicrm_config().
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_config
