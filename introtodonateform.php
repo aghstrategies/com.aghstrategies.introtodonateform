@@ -10,13 +10,13 @@ function introtodonateform_civicrm_buildForm($formName, &$form) {
   if ($formName == 'CRM_Contribute_Form_Contribution_Main') {
     if ($form->getAction() == CRM_Core_Action::ADD) {
       if (!empty($_GET["firstname"])) {
-        $defaults['first_name'] = $_GET["firstname"];
+        $defaults['first_name'] = htmlspecialchars($_GET["firstname"]);
       }
       if (!empty($_GET["lastname"])) {
-        $defaults['last_name'] = $_GET["lastname"];
+        $defaults['last_name'] = htmlspecialchars($_GET["lastname"]);
       }
       if (!empty($_GET["email"])) {
-        $defaults['email-5'] = $_GET["email"];
+        $defaults['email-5'] = htmlspecialchars($_GET["email"]);
       }
       // TODO: make radio buttons change
       if (!empty($_GET["amount"])) {
