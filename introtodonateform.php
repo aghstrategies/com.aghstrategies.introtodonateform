@@ -3,9 +3,8 @@
 require_once 'introtodonateform.civix.php';
 
 /**
- * Implements hook_civicrm_buildform
- * @param  [type] $formName [description]
- * @param  [type] $form     [description]
+ * Implements introtodonateform_civicrm_buildform
+ *
  */
 function introtodonateform_civicrm_buildForm($formName, &$form) {
   if ($formName == 'CRM_Contribute_Form_Contribution_Main') {
@@ -14,10 +13,20 @@ function introtodonateform_civicrm_buildForm($formName, &$form) {
         $defaults['first_name'] = $_GET["firstname"];
         $form->setDefaults($defaults);
       }
+      if (!empty($_GET["lastname"])) {
+        $defaults['last_name'] = $_GET["lastname"];
+        $form->setDefaults($defaults);
+      }
+      if (!empty($_GET["email"])) {
+        $defaults['email-5'] = $_GET["email"];
+        $form->setDefaults($defaults);
+      }
+      // TODO: make radio buttons change
+      if (!empty($_GET["amount"])) {
+        $defaults['price-5'] = $_GET["amount"];
+        $form->setDefaults($defaults);
+      }
     }
-    // ($_GET["lastname"])
-    // ($_GET["email"])
-    // ($_GET["amount"])
   }
 }
 
