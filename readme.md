@@ -24,7 +24,7 @@ Form HTML on: http://newsite.crossroadscommunityfoodnetwork.org/get-involved/
 
 Things to do:
 
-+ Need to put form on dev site
-+ need to create extension with buildform hook that sets the defaults
++ style form
++ empty amount
 
 http://newsite.crossroadscommunityfoodnetwork.org/civicrm/?page=CiviCRM&q=civicrm/contribute/transact&reset=1&id=2

@@ -8,8 +8,6 @@ require_once 'introtodonateform.civix.php';
  */
 function introtodonateform_civicrm_buildForm($formName, &$form) {
   if ($formName == 'CRM_Contribute_Form_Contribution_Main') {
-    print_r($form);
-    die();
     if ($form->getAction() == CRM_Core_Action::ADD) {
       if (!empty($_GET["firstname"])) {
         $defaults['first_name'] = htmlspecialchars($_GET["firstname"]);
@@ -21,12 +19,26 @@ function introtodonateform_civicrm_buildForm($formName, &$form) {
         $defaults['email-5'] = htmlspecialchars($_GET["email"]);
       }
       // TODO: make radio buttons change
-      if (!empty($_GET["amount"])) {
-        if ($_GET["amount"] == 140) {
-          $defaults['price_4'] = "11";
+      if (!empty($_GET["amount"]) && !empty($form->_priceset['fields'])) {
+        $found = FALSE;
+        foreach ($form->_priceset['fields'] as $field) {
+          if (!empty($field['options'])) {
+            foreach ($field['options'] as $option) {
+              if (CRM_Utils_Array::value('amount', $option) == $_GET["amount"]) {
+                //we found the price option that matches the amount
+                $defaults['price_' . $field['id']] = $option['id'];
+                $found = TRUE;
+                break 2;
+              }
+            }
+          }
+          if ($field['option']['name'] == 'other_amount') {
+            $other = $field['option']['name'];
+          }
         }
-        if ($_GET["amount"] == 100) {
-          $defaults['price_4'] = 10;
+        //handle amount not found
+        if (!$found) {
+          $defaults['price_' . $field['id']] = $option['id'];
         }
       }
       $form->setDefaults($defaults);
