@@ -24,7 +24,7 @@ function introtodonateform_civicrm_buildForm($formName, &$form) {
           $defaults['price-4'] = "11";
         }
         if ($_GET["amount"] == 100) {
-          $defaults['price-4'] = "10";
+          $defaults['price-4'] = 10;
         }
       }
       $form->setDefaults($defaults);
