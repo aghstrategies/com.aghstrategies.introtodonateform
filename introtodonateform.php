@@ -20,8 +20,11 @@ function introtodonateform_civicrm_buildForm($formName, &$form) {
       }
       // TODO: make radio buttons change
       if (!empty($_GET["amount"])) {
-        if ($_GET["amount"] == 750) {
+        if ($_GET["amount"] == 140) {
           $defaults['price-4'] = "11";
+        }
+        if ($_GET["amount"] == 100) {
+          $defaults['price-4'] = "10";
         }
       }
       $form->setDefaults($defaults);
