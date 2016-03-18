@@ -12,13 +12,13 @@ Form HTML on: http://newsite.crossroadscommunityfoodnetwork.org/get-involved/
       <input type="hidden" name="page" value="CiviCRM">
       <input type="hidden" name="q" value="civicrm/contribute/transact">
       <p class="et_pb_contact_field et_pb_contact_field_0">
-        <input class="input" placeholder="First Name" name="firstname" type="text">
+        <input class="input" placeholder="First Name" name="itdf-firstname" type="text">
       </p>
       <p class="et_pb_contact_field et_pb_contact_field_0">
-        <input class="input" placeholder="Last Name" name="lastname" type="text">
+        <input class="input" placeholder="Last Name" name="itdf-lastname" type="text">
       </p>
       <p class="et_pb_contact_field et_pb_contact_field_1  et_pb_contact_field_last">
-        <input class="input" placeholder="Email Address" name="email" type="email">
+        <input class="input" placeholder="Email Address" name="itdf-email" type="email">
       </p>
       <div class="et_contact_bottom_container">
       </div>
@@ -32,14 +32,14 @@ Form HTML on: http://newsite.crossroadscommunityfoodnetwork.org/get-involved/
   <input type="hidden" name="reset" value="1">
   <input type="hidden" name="page" value="CiviCRM">
   <input type="hidden" name="q" value="civicrm/contribute/transact">
-  <input class="input" type="text" name="firstname" placeholder="First Name">
-  <input class="input" type="text" name="lastname" placeholder="Last Name">
-  <input class="input" type="email" name="email" placeholder="Email">
+  <input class="input" type="text" name="itdf-firstname" placeholder="First Name">
+  <input class="input" type="text" name="itdf-lastname" placeholder="Last Name">
+  <input class="input" type="email" name="itdf-email" placeholder="Email">
   <fieldset>
-    <label><input type="radio" name="amount" value="20">$20</label>
-    <label><input type="radio" name="amount" value="60">$60</label>
-    <label><input type="radio" name="amount" value="100">$100</label>
-    <label><input type="radio" name="amount" value="750">$750</label>
+    <label><input type="radio" name="itdf-amount" value="20">$20</label>
+    <label><input type="radio" name="itdf-amount" value="60">$60</label>
+    <label><input type="radio" name="itdf-amount" value="100">$100</label>
+    <label><input type="radio" name="itdf-amount" value="750">$750</label>
   </fieldset>
   <input class="et_pb_contact_submit et_pb_button" type="submit" value="Donate Now">
 </form>

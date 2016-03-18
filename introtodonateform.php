@@ -9,17 +9,17 @@ require_once 'introtodonateform.civix.php';
 function introtodonateform_civicrm_buildForm($formName, &$form) {
   if ($formName == 'CRM_Contribute_Form_Contribution_Main') {
     if ($form->getAction() == CRM_Core_Action::ADD) {
-      if (!empty($_GET["firstname"])) {
-        $defaults['first_name'] = htmlspecialchars($_GET["firstname"]);
+      if (!empty($_GET["itdf-firstname"])) {
+        $defaults['first_name'] = htmlspecialchars($_GET["itdf-firstname"]);
       }
-      if (!empty($_GET["lastname"])) {
-        $defaults['last_name'] = htmlspecialchars($_GET["lastname"]);
+      if (!empty($_GET["itdf-lastname"])) {
+        $defaults['last_name'] = htmlspecialchars($_GET["itdf-lastname"]);
       }
-      if (!empty($_GET["email"])) {
-        $defaults['email-5'] = htmlspecialchars($_GET["email"]);
+      if (!empty($_GET["itdf-email"])) {
+        $defaults['email-5'] = htmlspecialchars($_GET["itdf-email"]);
       }
       // TODO: make radio buttons change
-      if (!empty($_GET["amount"]) && !empty($form->_priceSet['fields'])) {
+      if (!empty($_GET["itdf-amount"]) && !empty($form->_priceSet['fields'])) {
         $found = FALSE;
         foreach ($form->_priceSet['fields'] as $field) {
           if ($field['name'] == 'contribution_amount') {
@@ -27,7 +27,7 @@ function introtodonateform_civicrm_buildForm($formName, &$form) {
           }
           if (!empty($field['options'])) {
             foreach ($field['options'] as $option) {
-              if (floatval(CRM_Utils_Array::value('amount', $option)) == floatval($_GET["amount"])) {
+              if (floatval(CRM_Utils_Array::value('itdf-amount', $option)) == floatval($_GET["itdf-amount"])) {
                 //we found the price option that matches the amount
                 $defaults['price_' . $field['id']] = $option['id'];
                 $found = TRUE;
@@ -42,7 +42,7 @@ function introtodonateform_civicrm_buildForm($formName, &$form) {
         //handle amount not found
         if (!$found) {
           $defaults['price_' . $radioId] = 0;
-          $defaults['price_' . $otherId] = $_GET["amount"];
+          $defaults['price_' . $otherId] = $_GET["itdf-amount"];
         }
       }
       $form->setDefaults($defaults);
