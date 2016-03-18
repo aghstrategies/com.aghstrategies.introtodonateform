@@ -18,9 +18,6 @@ function introtodonateform_civicrm_buildForm($formName, &$form) {
       if (!empty($_GET["email"])) {
         $defaults['email-5'] = htmlspecialchars($_GET["email"]);
       }
-      print_r($_GET["amount"]);
-      print_r($form->_priceSet['fields']);
-      die();
       // TODO: make radio buttons change
       if (!empty($_GET["amount"]) && !empty($form->_priceSet['fields'])) {
         $found = FALSE;
