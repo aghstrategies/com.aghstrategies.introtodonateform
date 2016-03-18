@@ -1,7 +1,6 @@
 
 Notes:
-<!-- url of form - action -->
-
+-----
 Form HTML on: http://newsite.crossroadscommunityfoodnetwork.org/get-involved/
 
 ```html
@@ -26,6 +25,5 @@ Form HTML on: http://newsite.crossroadscommunityfoodnetwork.org/get-involved/
 Things to do:
 
 + style form
-+ amount functionality
 
 http://newsite.crossroadscommunityfoodnetwork.org/civicrm/?page=CiviCRM&q=civicrm/contribute/transact&reset=1&id=2
