@@ -23,12 +23,13 @@ function introtodonateform_civicrm_buildForm($formName, &$form) {
         $found = FALSE;
         foreach ($form->_priceSet['fields'] as $field) {
           if (!empty($field['options'])) {
+            $radioId = $field['id'];
             foreach ($field['options'] as $option) {
               if (floatval(CRM_Utils_Array::value('amount', $option)) == floatval($_GET["amount"])) {
                 //we found the price option that matches the amount
                 $defaults['price_' . $field['id']] = $option['id'];
-                $radioId = $field['id'];
                 $found = TRUE;
+                break 2;
               }
             }
           }
