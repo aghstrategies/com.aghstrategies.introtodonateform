@@ -21,10 +21,10 @@ function introtodonateform_civicrm_buildForm($formName, &$form) {
       // TODO: make radio buttons change
       if (!empty($_GET["amount"]) && !empty($form->_priceset['fields'])) {
         $found = FALSE;
+        print_r($form->_priceset['fields']);
+        die();
         foreach ($form->_priceset['fields'] as $field) {
           if (!empty($field['options'])) {
-            print_r($field['options']);
-            die();
             foreach ($field['options'] as $option) {
               if (CRM_Utils_Array::value('amount', $option) == $_GET["amount"]) {
                 //we found the price option that matches the amount
