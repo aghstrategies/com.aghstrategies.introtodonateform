@@ -8,6 +8,8 @@ require_once 'introtodonateform.civix.php';
  */
 function introtodonateform_civicrm_buildForm($formName, &$form) {
   if ($formName == 'CRM_Contribute_Form_Contribution_Main') {
+    print_r($form);
+    die();
     if ($form->getAction() == CRM_Core_Action::ADD) {
       if (!empty($_GET["firstname"])) {
         $defaults['first_name'] = htmlspecialchars($_GET["firstname"]);
@@ -21,8 +23,6 @@ function introtodonateform_civicrm_buildForm($formName, &$form) {
       // TODO: make radio buttons change
       if (!empty($_GET["amount"]) && !empty($form->_priceset['fields'])) {
         $found = FALSE;
-        print_r($form->_priceset['fields']);
-        die();
         foreach ($form->_priceset['fields'] as $field) {
           if (!empty($field['options'])) {
             foreach ($field['options'] as $option) {
