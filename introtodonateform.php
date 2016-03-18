@@ -27,20 +27,20 @@ function introtodonateform_civicrm_buildForm($formName, &$form) {
               if (floatval(CRM_Utils_Array::value('amount', $option)) == floatval($_GET["amount"])) {
                 //we found the price option that matches the amount
                 $defaults['price_' . $field['id']] = $option['id'];
-                $RadioId = $field['id'];
+                $radioId = $field['id'];
                 $found = TRUE;
                 break 2;
               }
             }
           }
-          if ($field['option']['name'] == 'other_amount') {
-            $other = $field['option']['id'];
+          if ($field['name'] == 'other_amount') {
+            $otherId = $field['id'];
           }
         }
         //handle amount not found
         if (!$found) {
-          $defaults['price_4'] = 0;
-          $defaults['price_5'] = $_GET["amount"];
+          $defaults['price_' . $radioId] = 0;
+          $defaults['price_' . $otherId] = $_GET["amount"];
         }
       }
       $form->setDefaults($defaults);
