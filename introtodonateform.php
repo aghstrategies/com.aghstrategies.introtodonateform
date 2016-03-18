@@ -23,6 +23,8 @@ function introtodonateform_civicrm_buildForm($formName, &$form) {
         $found = FALSE;
         foreach ($form->_priceset['fields'] as $field) {
           if (!empty($field['options'])) {
+            print_r($field['options']);
+            die();
             foreach ($field['options'] as $option) {
               if (CRM_Utils_Array::value('amount', $option) == $_GET["amount"]) {
                 //we found the price option that matches the amount
