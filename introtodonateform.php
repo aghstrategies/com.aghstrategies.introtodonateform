@@ -38,6 +38,9 @@ function introtodonateform_civicrm_buildForm($formName, &$form) {
           }
         }
         //handle amount not found
+        print_r($RadioId);
+        print_r($other);
+        die();
         if (!$found) {
           $defaults['price_' . $RadioId] = 0;
           $defaults['price_' . $other] = $_GET["amount"];
