@@ -1,4 +1,13 @@
 <?php
+/**
+ * @file
+ * Intro to Donate Form
+ *
+ * Extension to store info entered on a mini-form and on submit take you to a donation page populated appropriately.
+ *
+ * Copyright (C) 2016, AGH Strategies, LLC <info@aghstrategies.com>
+ * Licensed under the GNU Affero Public License 3.0 (see LICENSE.txt)
+ */
 
 require_once 'introtodonateform.civix.php';
 
