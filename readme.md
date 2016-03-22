@@ -23,7 +23,10 @@ Install the extension and set up your intro form on any page you like, be sure t
   | Email       | itdf-email    |
   | Amounts     | itdf-amount   |
 
-2) Set up the following hidden fields and the form action according to what CMS you are using:
+2) Set up the contribution page you will be linking to. Get the ID number of the contribution page. add to your form a hidden field that looks like this ``  <input type="hidden" name="id" value="{the id number of the contribution page you are using}">
+`` in the example below I use ID #2. 
+
+3) Set up the following hidden fields and the form action according to what CMS you are using:
 
 ### WordPress:
 
@@ -60,7 +63,7 @@ If using wordpress have a form action formatted like this: `<form action="http:/
 ```
 ### Drupal:
 
-C) If using drupal have a form action formatted like this: `<form action="http://example.com/civicrm/contribute/transact" method="get">` and the following hidden fields:
+If using drupal have a form action formatted like this: `<form action="http://example.com/civicrm/contribute/transact" method="get">` and the following hidden fields:
 
 ```html
 
