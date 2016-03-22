@@ -41,7 +41,7 @@ If using wordpress have a form action formatted like this: `<form action="http:/
 
 ```
 
-#### Example Form for WordPress site
+#### Example "Intro to Donate Form" for WordPress site
 ```html
 <!-- Example Form -->
 <form action="http://example.org/civicrm/" method="get">
@@ -71,7 +71,7 @@ If using drupal have a form action formatted like this: `<form action="http://ex
   <input type="hidden" name="reset" value="1">
 
 ```
-#### Example Form for Drupal site
+#### Example "Intro to Donate Form" for Drupal site
 ```html
 <form action="http://example.com/civicrm/contribute/transact" method="get">
   <input type="hidden" name="id" value="2">
