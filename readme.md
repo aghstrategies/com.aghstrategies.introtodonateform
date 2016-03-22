@@ -12,7 +12,7 @@ and on submit is taken to a civicrm donation page populated with the information
 
 ## How to Implement:
 
-Install the extension and set up your intro form on any page you like, be sure to include the following things:
+Install the extension and set up your intro to donate form on any page you like. (There are example "Intro to Donate forms" for WordPress and Drupal below you can copy the form for your CMS and customize the form action url and contribution page id # and be ready to go) or follow the instructions below to build the form from scratch.
 
 1) for the relevant input tags use the following name attributes ex: `<input type="text" name="itdf-firstname" placeholder="First Name">`:
 
@@ -24,7 +24,7 @@ Install the extension and set up your intro form on any page you like, be sure t
   | Amounts     | itdf-amount   |
 
 2) Set up the contribution page you will be linking to. Get the ID number of the contribution page. add to your form a hidden field that looks like this ``  <input type="hidden" name="id" value="{the id number of the contribution page you are using}">
-`` in the example below I use ID #2. 
+`` in the example below I use ID #2.
 
 3) Set up the following hidden fields and the form action according to what CMS you are using:
 

@@ -13,7 +13,7 @@
     <url desc="documentation">https://github.com/aghstrategies/com.aghstrategies.introtodonateform</url>
   </urls>
   <releaseDate>2016-03-17</releaseDate>
-  <version>v1.0</version>
+  <version>1.0</version>
   <develStage>stable</develStage>
   <compatibility>
     <ver>4.6</ver>
