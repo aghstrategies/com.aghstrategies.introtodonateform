@@ -17,6 +17,8 @@ require_once 'introtodonateform.civix.php';
  */
 function introtodonateform_civicrm_buildForm($formName, &$form) {
   if ($formName == 'CRM_Contribute_Form_Contribution_Main') {
+    //loads javascript for other amount on same line
+    CRM_Core_Resources::singleton()->addScriptFile('com.aghstrategies.introtodonateform', 'js/introtodonate.js');
     if ($form->getAction() == CRM_Core_Action::ADD) {
       if (!empty($_GET["itdf-firstname"])) {
         $defaults['first_name'] = htmlspecialchars($_GET["itdf-firstname"]);
